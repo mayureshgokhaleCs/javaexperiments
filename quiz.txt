@@ -1,0 +1,13 @@
+request.getSession if the session doesnot exist it creates, if u set it as false it will just accept the existing session it wont create sessionisNew shows if new session is created
+each session object has unique id
+across a tab of browser the session remains the same if new window then not new sessions find out
+login servelet
+user sees login face question page and results make login servelet it goes to authenticator if not authenticated 
+then 
+forward it to login if correct goes to question it keeps on storing 
+doing session management when your browser hits login servlet write request.getsession (new session object is created)
+when authenticator also tries request.getSession is should get existing session(isNew should be false else invalidate 
+as you never create a new session its a job of login)
+if you dont get existing session that means some is trying to attack you ...best will be create session object at one place and use it everywhere, you get session object and store it with username pass at authenticate level so that there is a link, authenticator makes the link in session object, if there is already a link that means already authenticated guy
+every page will do request.getSession false, if you get null redirect him to login
+all this makes sure that no one calls url directly
