@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="p1" class="P1.Point">
+		<property name="x" value="1000" />
+		<property name="y" value="2000" />
+	</bean>
+	<bean id="p2" class="P1.Point">
+		<property name="x" value="3000" />
+		<property name="y" value="2000" />
+	</bean>
+	<bean id="segment" class="P1.Segment" autowire="byName">
+
+	</bean>
+	<!-- upar is auto wiring now Factory method -->
+	<bean id="p3" class="P1.Point" factory-method="getPoint">
+	</bean>
+	<bean id="p4" class="P1.Point" init-method="start" destroy-method="dest">
+		<property name="x" value="10" />
+		<property name="y" value="90" />
+	</bean>
+	<bean id="p5" class="P1.Point">
+		<lookup-method name="old" bean="repl" />
+		<property name="x" value="1000" />
+		<property name="y" value="2000" />
+
+	</bean>
+	<bean id="repl" class="Replacer" scope="prototype">
+
+	</bean>
+
+
+</beans>

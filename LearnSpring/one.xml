@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="point1" class="P1.Point" abstract="true">
+		<property name="x" value="1000" />
+		<property name="y" value="2000" />
+	</bean>
+	<!--  <bean id="point2" parent="point1">
+	<property name="x" value="9000" />
+	<property name="y" value="2000" />
+	</bean>-->
+	<!-- inject array -->
+	<bean id="point3" class="P1.Point">
+	<property name="a">
+	<list>
+	<value> 10</value>
+	<value> 20</value>
+	
+	</list>
+	</property> 
+	</bean>
+	<!--  
+	<bean id="segment" class="P1.Segment">
+		<property name="p1" ref="point1"></property>
+		<property name="p2" ref="point2"></property>
+	</bean>
+
+	<bean id="segment1" class="P1.Segment">
+		<constructor-arg ref="point1"></constructor-arg>
+		<constructor-arg ref="point2"></constructor-arg>
+	</bean>
+	<bean id="segment2" class="P1.Segment">
+		<property name="p1">
+			<bean class="P1.Point">
+				<property name="x" value="999000" />
+				<property name="y" value="00000" />
+			</bean>
+
+		</property>
+		<property name="p2">
+			<bean class="P1.Point">
+				<property name="x" value="000" />
+				<property name="y" value="1" />
+			</bean>
+
+		</property>
+	</bean>
+	<bean id="segment4" class="P1.Segment">
+		<constructor-arg>
+			<bean class="P1.Point">
+				<property name="x" value="999000" />
+				<property name="y" value="00000" />
+			</bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean class="P1.Point">
+				<property name="x" value="000" />
+				<property name="y" value="1" />
+			</bean>
+		</constructor-arg>
+	</bean>-->
+</beans>

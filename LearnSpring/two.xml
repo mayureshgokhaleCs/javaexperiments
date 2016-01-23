@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="point1" class="P1.Point">
+		<property name="x" value="1000" />
+		<property name="y" value="2000" />
+	</bean>
+	<bean id="point2" class="P1.Point">
+		<property name="x" value="3000" />
+		<property name="y" value="4000" />
+	</bean>
+	<bean id="point3" class="P1.Point">
+		<property name="x" value="5000" />
+		<property name="y" value="6000" />
+	</bean>
+	<bean id="point4" class="P1.Point">
+		<property name="x" value="7000" />
+		<property name="y" value="8000" />
+	</bean>
+	<bean id="segment1" class="P1.Segment">
+		<property name="p1" ref="point1"></property>
+		<property name="p2" ref="point2"></property>
+	</bean>
+	
+	<bean id="segment2" class="P1.Segment">
+		<property name="p1" ref="point1"></property>
+		<property name="p2" ref="point4"></property>
+	</bean>
+	
+	<bean id="segment3" class="P1.Segment">
+		<property name="p1" ref="point2"></property>
+		<property name="p2" ref="point3"></property>
+	</bean>
+	
+	<bean id="segment4" class="P1.Segment">
+		<property name="p1" ref="point3"></property>
+		<property name="p2" ref="point4"></property>
+	</bean>
+	
+	
+</beans>
