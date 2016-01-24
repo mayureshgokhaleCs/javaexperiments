@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="start" class="P1.Demo">
+	<property name="i" value="#{99}"></property>
+	<property name="j" value="#{88.0}"></property>
+	<property name="k" value="#{'kk'}"></property>
+	<property name="b" value="#{true}"></property>
+	</bean>
+	<bean id="start1" class="P1.Demo">
+	<property name="i" value="#{start.i}"></property>
+	<property name="j" value="#{start.i+1000}"></property>
+	</bean>
+	</beans>

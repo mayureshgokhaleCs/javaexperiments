@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<aop:aspectj-autoproxy />
+
+	<bean id="point1" class="P1.Point">
+		<property name="x" value="1000" />
+		<property name="y" value="2000" />
+	</bean>
+	<bean id="ad1" class="P1.advice1">
+	</bean>
+	<aop:config>
+	<aop:aspect ref="ad1">
+	<aop:before pointcut-ref="cut1" method="method1"/>
+	<aop:after pointcut="execution(* P1.Point.print(..))" method="method2"/>
+	<aop:after-returning  pointcut="execution(* P1.Point.print(..))"  method="m3"/>
+	<aop:after-throwing pointcut="execution(* P1.Point.print(..))" method="m4"/>
+	<!-- alternate way of using point cut as global -->
+	<aop:pointcut expression="execution(* P1.Point.print(..))" id="cut1"/>
+	</aop:aspect>
+	</aop:config>
+</beans>
