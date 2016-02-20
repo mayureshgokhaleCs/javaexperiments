@@ -1,6 +1,6 @@
 package P1;
 
-public class Point {
+public class Point  {
 	int x;
 	int y;
 

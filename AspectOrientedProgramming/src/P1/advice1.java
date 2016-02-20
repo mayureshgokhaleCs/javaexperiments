@@ -18,4 +18,8 @@ public class advice1 {
 	public void m4() {
 		System.out.println("this is m4");
 	}
+
+	public void m5() {
+		System.out.println("this is m5");
+	}
 }
